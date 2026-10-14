@@ -1,0 +1,24 @@
+{
+  "duplicate_hashes": [],
+  "errors": [
+    {
+      "error": "input directory does not exist",
+      "path": "/home/user/Win7DVDC-Decomp/bin"
+    }
+  ],
+  "files": [],
+  "root": "/home/user/Win7DVDC-Decomp/bin",
+  "root_exists": false,
+  "scanned_at_utc": "2026-10-14T21:38:55+00:00",
+  "schema_version": 1,
+  "status": "root_missing",
+  "summary": {
+    "duplicate_hash_groups": 0,
+    "entries": 0,
+    "regular_files": 0,
+    "stable_hashes": 0,
+    "symlinks": 0,
+    "total_regular_file_bytes": 0,
+    "unstable_or_failed_hashes": 0
+  }
+}

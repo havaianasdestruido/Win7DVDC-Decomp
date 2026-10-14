@@ -1,0 +1,142 @@
+{
+  "checks": [
+    {
+      "artifact_sha256": "40961a14162757677d5ef52a623e1230d895658226df66309bccba7453ba9bc4",
+      "check": "PE32 resource parsing",
+      "coverage": {
+        "examined_entries": 3,
+        "resources": 1,
+        "status": "complete"
+      },
+      "evidence_file": "analysis/report/rea-smoke/pe32-resources.json",
+      "format": "pe32",
+      "input_unchanged": true,
+      "resource": {
+        "language": {
+          "id": 1033,
+          "kind": "id"
+        },
+        "name": {
+          "id": 1,
+          "kind": "id"
+        },
+        "payload_bytes": 12,
+        "payload_sha256": "21defa1ecdeef1ced721bb3875ea91c0d95e0920849c7388a665c4e59fc53250",
+        "type": {
+          "id": 6,
+          "kind": "id"
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "artifact_sha256": "40961a14162757677d5ef52a623e1230d895658226df66309bccba7453ba9bc4",
+      "bfd_format_observed": "pei-i386",
+      "check": "PE32 REA/objdump file-header capture",
+      "evidence_file": "analysis/report/rea-smoke/pe32-objdump-file-headers.json",
+      "input_unchanged": true,
+      "provider_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "artifact_sha256": "40961a14162757677d5ef52a623e1230d895658226df66309bccba7453ba9bc4",
+      "check": "PE32 independent header cross-check",
+      "direct_objdump_bfd_format": "pei-i386",
+      "direct_objdump_output": "analysis/report/rea-smoke/pe32-direct-objdump.txt",
+      "input_unchanged": true,
+      "inventory_architecture": "x86",
+      "inventory_format": "PE32 image",
+      "status": "passed"
+    },
+    {
+      "artifact_sha256": "cdabff8d79bc6ad73fb58b652665dc46afc137e75bee67888e6e7a27c1609219",
+      "check": "PE32+ resource parsing",
+      "coverage": {
+        "examined_entries": 3,
+        "resources": 1,
+        "status": "complete"
+      },
+      "evidence_file": "analysis/report/rea-smoke/pe64-resources.json",
+      "format": "pe32-plus",
+      "input_unchanged": true,
+      "resource": {
+        "language": {
+          "id": 1033,
+          "kind": "id"
+        },
+        "name": {
+          "id": 1,
+          "kind": "id"
+        },
+        "payload_bytes": 12,
+        "payload_sha256": "21defa1ecdeef1ced721bb3875ea91c0d95e0920849c7388a665c4e59fc53250",
+        "type": {
+          "id": 6,
+          "kind": "id"
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "artifact_sha256": "cdabff8d79bc6ad73fb58b652665dc46afc137e75bee67888e6e7a27c1609219",
+      "bfd_format_observed": "pei-x86-64",
+      "check": "PE32+ REA/objdump file-header capture",
+      "evidence_file": "analysis/report/rea-smoke/pe64-objdump-file-headers.json",
+      "input_unchanged": true,
+      "provider_exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "artifact_sha256": "cdabff8d79bc6ad73fb58b652665dc46afc137e75bee67888e6e7a27c1609219",
+      "check": "PE32+ independent header cross-check",
+      "direct_objdump_bfd_format": "pei-x86-64",
+      "direct_objdump_output": "analysis/report/rea-smoke/pe64-direct-objdump.txt",
+      "input_unchanged": true,
+      "inventory_architecture": "x86-64",
+      "inventory_format": "PE32+ image",
+      "status": "passed"
+    }
+  ],
+  "fixtures": [
+    {
+      "bytes": 1024,
+      "executed": false,
+      "expected_resource_payload_sha256": "21defa1ecdeef1ced721bb3875ea91c0d95e0920849c7388a665c4e59fc53250",
+      "kind": "generated synthetic PE with one type-ID-6 resource leaf and opaque marker payload",
+      "name": "synthetic-pe32.exe",
+      "sha256": "40961a14162757677d5ef52a623e1230d895658226df66309bccba7453ba9bc4",
+      "stored_in_bin": false
+    },
+    {
+      "bytes": 1024,
+      "executed": false,
+      "expected_resource_payload_sha256": "21defa1ecdeef1ced721bb3875ea91c0d95e0920849c7388a665c4e59fc53250",
+      "kind": "generated synthetic PE with one type-ID-6 resource leaf and opaque marker payload",
+      "name": "synthetic-pe64.exe",
+      "sha256": "cdabff8d79bc6ad73fb58b652665dc46afc137e75bee67888e6e7a27c1609219",
+      "stored_in_bin": false
+    }
+  ],
+  "generated_at_utc": "2026-10-14T22:34:42+00:00",
+  "rea": {
+    "command_family": "npx --yes --package=rea-agents@6.5.0 rea",
+    "launcher": [
+      "/usr/local/bin/npx",
+      "--yes",
+      "--package=rea-agents@6.5.0",
+      "rea"
+    ],
+    "objdump_command": "inspect-with-objdump PATH file_headers --format json",
+    "package": "rea-agents",
+    "resource_command": "inspect-pe-resources PATH --format json",
+    "version": "6.5.0"
+  },
+  "schema_version": 1,
+  "scope_and_limitations": [
+    "This test validates REA CLI behavior and the supplied GNU objdump adapter against generated, non-proprietary PE fixtures only.",
+    "It does not inspect any project target; bin/ is absent at the time of this run.",
+    "The PE resource operation inventories metadata and opaque payload byte ranges; it does not decompile PE code.",
+    "Native decompilation still requires a configured Ghidra, Hopper, or IDA provider and an actual target binary."
+  ],
+  "status": "passed"
+}
