@@ -1,0 +1,5 @@
+
+/tmp/win7dvdc-rea-smoke-e9jmukeo/synthetic-pe32.exe:     file format pei-i386
+architecture: i386, flags 0x0000012f:
+HAS_RELOC, EXEC_P, HAS_LINENO, HAS_DEBUG, HAS_LOCALS, D_PAGED
+start address 0x00000000
